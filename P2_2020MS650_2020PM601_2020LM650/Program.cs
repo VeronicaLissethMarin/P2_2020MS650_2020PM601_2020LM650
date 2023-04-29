@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using P2_2020MS650_2020PM601_2020LM650.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<registro_covidDbContext>(opt =>
+    opt.UseSqlServer(
+        builder.Configuration.GetConnectionString("registroDbConnection")
+        )
+);
 
 var app = builder.Build();
 

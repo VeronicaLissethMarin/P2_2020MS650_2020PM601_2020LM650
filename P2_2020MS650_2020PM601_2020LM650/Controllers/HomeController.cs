@@ -26,6 +26,19 @@ namespace P2_2020MS650_2020PM601_2020LM650.Controllers
                                 select d).ToList();
             ViewData["listaDep"] = new SelectList(listaDep, "id_departamento", "nombredepartamento");
 
+            var registroCovid = (from r in _covidDbContext.reporte
+                                 join d in _covidDbContext.departamento on r.id_departamento equals d.id_departamento
+                                 join g in _covidDbContext.genero on r.id_genero equals g.id_genero
+
+                                 select new
+                                 {
+                                     departamento = d.nombredepartamento,
+                                     genero = g.nombregenero,
+                                     confirmados = r.confirmados,
+                                     recuperados = r.recuperados,
+                                     fallecidos = r.fallecidos,
+            }).ToList();
+            ViewData["registroCovid"] = registroCovid;
 
             return View();
         }

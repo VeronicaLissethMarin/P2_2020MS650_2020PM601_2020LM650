@@ -2,7 +2,73 @@
     ViewData["Title"] = "Home Page";
 }
 
+@{
+    IEnumerable<string> strLista = new List<string> { "Ahuachapán", "Santa Ana", "San Salvador Centro" };
+}
+@{
+    IEnumerable<string> strGenero = new List<string> { "Femenino", "Masculino", "Otro" };
+}
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Registro de Covid</h1>
+    <p>
+        El siguiente formulario es para llevar el registro de casos reportados
+        <br>de Covid por departamento y genero
+    </p>
+    <form>
+        @*Inicio del formulario*@
+        <div class="row mb-3">
+
+            <h3 class="col-sm-2 col-form-label">Reportar Casos</h3>
+        </div>
+        <div class="row">
+            <div class="col-xl">
+                <p>Departamento</p>
+                @Html.DropDownList("ddlDepa", new SelectList(strLista))
+            </div>
+            <div class="col-xl">
+                <p>Género</p>
+                @Html.DropDownList("ddlGen", new SelectList(strGenero))
+            </div>
+        </div>
+        <br>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <p>Casos confirmados</p>
+                    @Html.TextBox("txtCasos", "", new{@class = "form-control"})
+                </div>
+                <div class="col">
+                    <p>Número de recuperados</p>
+                    @Html.TextBox("txtRecuperados", "", new{@class = "form-control"})
+                </div>
+                <div class="col">
+                    <p>Número de fallecidos</p>
+                    @Html.TextBox("txtFallecidos", "", new{@class = "form-control"})
+                </div>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-success" type="button">Guardar Registro</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h3>Casos Reportados</h3>
+        <table class="table table-sm">
+            <thead>
+               <tr>
+                   <th>Departamento</th>
+                   <th>Genero</th>
+                   <th>Confirmados</th>
+                   <th>Recuperados</th>
+                   <th>Fallecidos</th>
+               </tr> 
+            </thead>
+            <tbody>
+                ...
+            </tbody>
+        </table>
+        @*Fin del formulario*@
+    </form>
+
 </div>

@@ -10,7 +10,6 @@ namespace P2_2020MS650_2020PM601_2020LM650.Models
         [Display(Name = "ID de deparmento")]
         public int? id_departamento { get; set; }
 
-        [Display(Name = "ID")]
         public int? id_genero { get; set; }
 
         [Display(Name = "Casos confirmados")]

@@ -2,12 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-@{
-    IEnumerable<string> strLista = new List<string> { "Ahuachapán", "Santa Ana", "San Salvador Centro" };
-}
-@{
-    IEnumerable<string> strGenero = new List<string> { "Femenino", "Masculino", "Otro" };
-}
 <div class="text-center">
     <h1 class="display-4">Registro de Covid</h1>
     <p>
@@ -23,11 +17,11 @@
         <div class="row">
             <div class="col-xl">
                 <p>Departamento</p>
-                @Html.DropDownList("ddlDepa", new SelectList(strLista))
+                @Html.DropDownList("id_departamento", ViewData["listaDep"] as SelectList, "Seleccione un departamento", new {@class="form-control"})
             </div>
             <div class="col-xl">
                 <p>Género</p>
-                @*Html.DropDownList("genero_id", ViewData["listaGeneros"] as SelectList, "Seleccione un genero", new {@class="form-control"} )*@
+                @Html.DropDownList("id_genero", ViewData["listaGeneros"] as SelectList, "Seleccione un genero", new {@class="form-control"})
             </div>
         </div>
         <br>

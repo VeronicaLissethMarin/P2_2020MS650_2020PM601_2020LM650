@@ -1,0 +1,24 @@
+﻿@model P2_2020MS650_2020PM601_2020LM650.Models.genero
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>genero</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombregenero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombregenero)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id_genero">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -59,7 +59,7 @@
                </tr> 
             </thead>
             <tbody>
-                @*Si esto da error, avisenme*@
+               
                 @foreach (var registro in (IEnumerable<dynamic>)ViewData["registroCovid"])
                 {
                     <tr>
@@ -70,7 +70,7 @@
                         <td>@registro.fallecidos</td>
                     </tr>
 
-                }@*Si esto da error, avisenme*@
+                }
             </tbody>
         </table>
         @*Fin del formulario*@

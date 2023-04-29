@@ -27,7 +27,7 @@
             </div>
             <div class="col-xl">
                 <p>Género</p>
-                @Html.DropDownList("ddlGen", new SelectList(strGenero))
+                @Html.DropDownList("genero_id", ViewData["listaGeneros"] as SelectList, "Seleccione un genero", new {@class="form-control"} )
             </div>
         </div>
         <br>

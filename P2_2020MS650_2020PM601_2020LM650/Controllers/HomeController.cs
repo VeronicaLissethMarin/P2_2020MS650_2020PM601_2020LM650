@@ -43,6 +43,14 @@ namespace P2_2020MS650_2020PM601_2020LM650.Controllers
             return View();
         }
 
+        public IActionResult CrearRegistros(reporte NuevoRegistro)
+        {
+            _covidDbContext.Add(NuevoRegistro);
+            _covidDbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();

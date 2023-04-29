@@ -8,7 +8,7 @@
         El siguiente formulario es para llevar el registro de casos reportados
         <br>de Covid por departamento y genero
     </p>
-    <form>
+    <form asp-action="CrearRegistros">
         @*Inicio del formulario*@
         <div class="row mb-3">
 
@@ -29,20 +29,20 @@
             <div class="row">
                 <div class="col">
                     <p>Casos confirmados</p>
-                    @Html.TextBox("txtCasos", "", new{@class = "form-control"})
+                    @Html.TextBox("confirmados", "", new{@class = "form-control"})
                 </div>
                 <div class="col">
                     <p>Número de recuperados</p>
-                    @Html.TextBox("txtRecuperados", "", new{@class = "form-control"})
+                    @Html.TextBox("recuperados", "", new{@class = "form-control"})
                 </div>
                 <div class="col">
                     <p>Número de fallecidos</p>
-                    @Html.TextBox("txtFallecidos", "", new{@class = "form-control"})
+                    @Html.TextBox("fallecidos", "", new{@class = "form-control"})
                 </div>
             </div>
             <br>
             <div class="d-grid gap-2">
-                <button class="btn btn-success" type="button">Guardar Registro</button>
+                <button class="btn btn-success" type="submit">Guardar Registro</button>
             </div>
         </div>
         <br>
